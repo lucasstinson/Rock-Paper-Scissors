@@ -2,11 +2,47 @@
 <html>
   <body>
     <script>
+
+    let playerWins = 0;
+    let computerWins = 0;
+
     function computerPlay(){
       var selection = ["ROCK" ,"PAPER", "SCISSORS"];
       var choiceC = Math.floor(Math.random() * 3);
-      selection[choiceC];
+      return selection[choiceC];  // May need to edit
       }
+
+
+
+      function faceoff(computerSelection, playerSelection) {
+
+        if (computerSelection == "ROCK" && playerSelection == "SCISSORS"){
+          return "You Lose! Rock beats Scissors";
+        } else if (computerSelection == "SCISSORS" && playerSelection == "PAPER"){
+          return "You Lose! Scissors beats Paper";
+        } else if (computerSelection == "PAPER" && playerSelection == "ROCK"){
+          return "You Lose! Paper beats Rock";
+        } else if (computerSelection == "SCISSORS" && playerSelection == "ROCK"){
+          return "You Win! Rock beats Scissors";
+        } else if (computerSelection == "PAPER" && playerSelection == "SCISSORS"){
+          return "You Win! Scissors beats Paper";
+        } else if (computerSelection == "ROCK" && playerSelection == "PAPER"){
+          return "You Win! Paper beats Rock";
+
+        } else {
+          return "It\'s a tie"
+        }
+      }
+
+      function game() {
+        function faceoff();
+
+        for (i = 0; i < 6; i++) {
+
+        }
+
+      }
+
 
 
 
