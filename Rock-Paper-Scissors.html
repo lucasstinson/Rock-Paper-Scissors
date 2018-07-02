@@ -3,8 +3,11 @@
   <body>
     <script>
 
-    let playerWins = 0;
-    let computerWins = 0;
+    var playerWins = 0;
+    var computerWins = 0;
+    var ties = 0;
+
+
 
     function computerPlay(){
       var selection = ["ROCK" ,"PAPER", "SCISSORS"];
@@ -17,31 +20,46 @@
       function faceoff(computerSelection, playerSelection) {
 
         if (computerSelection == "ROCK" && playerSelection == "SCISSORS"){
+          computerWins = computerWins + 1;
           return "You Lose! Rock beats Scissors";
         } else if (computerSelection == "SCISSORS" && playerSelection == "PAPER"){
+          computerWins = computerWins + 1;
           return "You Lose! Scissors beats Paper";
         } else if (computerSelection == "PAPER" && playerSelection == "ROCK"){
+          computerWins = computerWins + 1;
           return "You Lose! Paper beats Rock";
         } else if (computerSelection == "SCISSORS" && playerSelection == "ROCK"){
+          playerWins = playerWins + 1;
           return "You Win! Rock beats Scissors";
         } else if (computerSelection == "PAPER" && playerSelection == "SCISSORS"){
+          playerWins = playerWins + 1;
           return "You Win! Scissors beats Paper";
         } else if (computerSelection == "ROCK" && playerSelection == "PAPER"){
+          playerWins = playerWins + 1;
           return "You Win! Paper beats Rock";
 
         } else {
-          return "It\'s a tie"
+          ties = ties + 1;
+          return "It\'s a tie";
         }
       }
 
       function game() {
-        function faceoff();
 
-        for (i = 0; i < 6; i++) {
+
+        for (i = 0; i < 5; i++) {
+          const playerSelection = prompt("Rock, Paper, or Scissors?").toUpperCase();
+          const computerSelection = computerPlay();
+          console.log ("Round # "+ i);
+          console.log("Computer chooses " + computerSelection + " and player selects " + playerSelection);
+          console.log ("Result: " + faceoff(computerSelection, playerSelection));
 
         }
 
+        console.log("Player Wins: " + playerWins + " Computer Wins: " + computerWins + " Ties: " + ties);
+
       }
+      game();
 
 
 
